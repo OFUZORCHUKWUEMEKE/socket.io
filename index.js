@@ -50,9 +50,15 @@ io.on('connect', (socket) => {
    
     socket.on('sendMessage',(message,callback) =>{ 
         const user = getUser(socket.id)
-        console.log(message);
+        // console.log(message);
+        const msg = 'No user Credentials'
         if(!user){
-          console.log('errors');
+         console.log(message);
+         socket.emit('error',msg,() => {
+           alert(msg)
+         })
+         console.log(user);
+         callback()
           // socket.off()
         }
         else{
