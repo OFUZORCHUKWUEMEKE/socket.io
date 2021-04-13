@@ -4,7 +4,7 @@ const http = require('http')
 
 const socketio = require('socket.io')
 
-const PORT = 6000
+
 
 const app = express()
 
@@ -84,7 +84,7 @@ io.on('connect', (socket) => {
 
 
 
-server.listen(5000,()=>{
+server.listen(process.env.PORT || 5000,()=>{
     console.log('app listening at port 5000')
 })
 
