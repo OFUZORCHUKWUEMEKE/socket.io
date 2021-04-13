@@ -4,33 +4,25 @@ const http = require('http')
 
 const socketio = require('socket.io')
 
+const cors = require('cors')
+
 
 
 const app = express()
 
 const {getUser,removeUser , getUsersInRoom,addUser} = require('./users')
 
-const cors = require('cors')
+
 
 const router = require('./router')
 
 const server = http.createServer(app)
 
-
-
-const io = socketio(server,{
- cors:{
-    origin:'*',
-    method:["GET","POST"],
-    // Access-Control-Allow-Origin:'',
-
-    allowedHeaders:["Content-Type","Authorization"],
-    Credentials:true
- }
-    
-})
 app.use(router) 
 app.use(cors())
+
+const io = socketio(server)
+
 
 
 io.on('connect', (socket) => { 
@@ -84,7 +76,7 @@ io.on('connect', (socket) => {
 
 
 
-server.listen(process.env.PORT || 5000,()=>{
-    console.log('app listening at port 5000')
-})
-
+// server.listen(process.env.PORT || 5000,()=>{
+//     console.log('app listening at port 5000')
+// })
+server.listen(process.env.PORT || 5000, () => console.log(`Server has started.`));
