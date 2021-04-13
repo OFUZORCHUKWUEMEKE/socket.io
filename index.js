@@ -1,3 +1,5 @@
+'use strict'
+
 const express = require('express')
 
 const http = require('http')
@@ -5,6 +7,11 @@ const http = require('http')
 const socketio = require('socket.io')
 
 const cors = require('cors')
+// check again
+// corsOptions={
+//   cors:true,
+//   origin:["http://localhost:3000"]
+// }
 
 const PORT = process.env.PORT  || 5000
 
