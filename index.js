@@ -6,7 +6,7 @@ const socketio = require('socket.io')
 
 const cors = require('cors')
 
-
+const PORT = process.env.PORT  || 5000
 
 const app = express()
 
@@ -79,4 +79,4 @@ io.on('connect', (socket) => {
 // server.listen(process.env.PORT || 5000,()=>{
 //     console.log('app listening at port 5000')
 // })
-server.listen(process.env.PORT || 5000, () => console.log(`Server has started.`));
+server.listen(PORT, () => console.log(`Server has started.`));
