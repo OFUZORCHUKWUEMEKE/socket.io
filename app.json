@@ -1,0 +1,6 @@
+{
+  "name": "CHAT-APP",
+  "description": "Chat-App using socket.io",
+  "repository": "https://github.com/OFUZORCHUKWUEMEKE/socket.io-client-2x",
+  "keywords": ["node", "websocket", "socket.io"]
+}
